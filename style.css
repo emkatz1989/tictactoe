@@ -1,0 +1,22 @@
+
+body{
+	background-color:black;
+	width: ;
+}
+
+#board-wrapper{
+	margin: auto;
+	width: 462px;
+	height: 462px;
+	padding: 80px;
+
+
+}
+
+.box {
+	width: 150px; 
+	height: 150px;
+	border: 2px solid blue;
+	float: left;
+
+}
