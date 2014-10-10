@@ -7,26 +7,27 @@
 	<script src="main.js"></script>
 </head>
 <body ng-app="TicTac" >
+	<h1>Tic Tac Toe</h1>
+		<div class="box" ng-controller="myController">
+				<div ng-repeat="currentCell in cellList">
+					<div class="cell" ng-click="playerPicks(currentCell)" ng-class="{xclass: currentCell.status=='X', oclass: currentCell.status == 'O'}">
 
-	<div class="box" ng-controller="myController">
-		<div ng-repeat="currentCell in cellList">
-			<div class="cell" ng-click="playerPicks(currentCell)" ng-class="{xclass: currentCell.status=='X', oclass: currentCell.status == 'O'}">
-				Cell Contents: {{currentCell.status}}
-			</div>
+				<!-- 	Cell Contents: {{currentCell.status}} -->
+					</div>
+				</div>
+
 		</div>
 
-	</div>
-
-			<!-- id="c0"></div>
-			<div class="cell" id="c1"></div>
-			<div class="cell" id="c2"></div>	
-			<div class="cell" id="c3"></div>
-			<div class="cell" id="c4"></div>
-			<div class="cell" id="c5"></div>
-			<div class="cell" id="c6"></div>
-			<div class="cell" id="c7"></div>
-			<div class="cell" id="c8"></div> -->
-	
+				<!-- id="c0"></div>
+				<div class="cell" id="c1"></div>
+				<div class="cell" id="c2"></div>	
+				<div class="cell" id="c3"></div>
+				<div class="cell" id="c4"></div>
+				<div class="cell" id="c5"></div>
+				<div class="cell" id="c6"></div>
+				<div class="cell" id="c7"></div>
+				<div class="cell" id="c8"></div> -->
+		
 
 
 </body>

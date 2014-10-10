@@ -3,11 +3,28 @@ body{
 	background-color:black;
 }
 
+h1{
+	color: white;
+	font-family: Tahoma;
+	font-style:bold;
+	text-align: center;
+	font-size: 40px;
+
+}
+
+p{
+	text-align: center;
+	color: white;
+	font-style: Impact;
+	font-size: 35px;
+}
+
 .box{
 	margin: auto;
 	width: 468px;
 	height: 468px;
 	padding: 80px;
+	border-radius: 10px;
 	border-style: solid;
 	border-color: blue;
 }
@@ -15,20 +32,23 @@ body{
 .cell {
 	width: 150px; 
 	height: 150px;
-	border: 2px solid blue;
+	border: 2px solid white;
 	float: left;
 	display: inline-block;
 	margin: 0px;
 	padding: 0px;
-	border-style: solid;
-	border-color: blue;
+	border-radius: 10px;
+	background-color: green;
+	
 
 }
 
 .xclass{
-	background-color:red;
+	background-image: url("cheney-photo.jpg");
+/*	background-color: red;*/
 }
 
 .oclass {
-	background-color:blue;
+	background-image: url("van-dyke.jpg");
+	/*background-color: blue;*/
 }
