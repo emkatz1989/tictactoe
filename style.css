@@ -1,22 +1,34 @@
 
 body{
 	background-color:black;
-	width: ;
 }
 
-#board-wrapper{
+.box{
 	margin: auto;
-	width: 462px;
-	height: 462px;
+	width: 468px;
+	height: 468px;
 	padding: 80px;
-
-
+	border-style: solid;
+	border-color: blue;
 }
 
-.box {
+.cell {
 	width: 150px; 
 	height: 150px;
 	border: 2px solid blue;
 	float: left;
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	border-style: solid;
+	border-color: blue;
 
+}
+
+.xclass{
+	background-color:red;
+}
+
+.oclass {
+	background-color:blue;
 }
