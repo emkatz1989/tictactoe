@@ -23,6 +23,12 @@ appTicTac.controller('myController', function($scope){
   
   $scope.playerPicks = function(thisCell) {
     $scope.movecounter = $scope.movecounter + 1 ;
+
+
+    if(thisCell.status=='X' || thisCell.status=='O'){
+    	return;
+    };
+
     console.log("Cell was: " + thisCell.status) ;
     if (($scope.movecounter % 2) == 1) {
       thisCell.status = "X" ;  
@@ -32,6 +38,16 @@ appTicTac.controller('myController', function($scope){
   };
 });
    
+
+
+
+
+
+
+
+
+
+
 //   //   console.log("Cell is now: " + thisCell.status) ;
 //   // }; 
 
