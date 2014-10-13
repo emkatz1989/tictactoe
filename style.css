@@ -1,6 +1,6 @@
 
 body{
-	background-color:black;
+	background-image: url("computer-screen.png")
 }
 
 h1{
@@ -48,7 +48,7 @@ p{
 /*	background-color: red;*/
 }
 
-.oclass {
+.oclass{
 	background-image: url("van-dyke.jpg");
 	/*background-color: blue;*/
 }
