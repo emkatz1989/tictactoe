@@ -27,28 +27,39 @@ appTicTac.controller('myController', function($scope){
     $scope.moveCounter=$scope.moveCounter + 1;
 
     if (($scope.moveCounter % 2) == 1) {
-      cell.name = "X" ; } 
+      cell.name = "X" ; 
+      console.log(cell.name);
+  	} 
     else {
       cell.name = "O" ;
+      console.log(cell.name)
 
     };
+  // 	if($scope.cellList[0..8].status=="false"){
+  // 	console.log("It's a tie!");
+
+  // 	else{
+  // 		return;
+  // }
+
+  // }
 
   if(
 //horizontal//
-$scope.cellList[0].status===$scope.cellList[1].status && $scope.celllist[0].status==$scope.cellList[2].status ||
-$scope.cellList[3].status===$scope.cellList[4].status && $scope.cellList[3].status===$scope.cellList[5].status ||
-$scope.cellList[6].status===$scope.cellList[7].status && $scope.cellList[6].status===$scope.cellList[8].status||
+$scope.cellList[0].name==$scope.cellList[1].name && $scope.cellList[0].name==$scope.cellList[2].name ||
+$scope.cellList[3].name==$scope.cellList[4].name && $scope.cellList[3].name==$scope.cellList[5].name ||
+$scope.cellList[6].name==$scope.cellList[7].name && $scope.cellList[6].name==$scope.cellList[8].name||
 
 //vertical//
-$scope.cellList[0].status===$scope.cellList[3].status && $scope.cellList[0].status==$scope.cellList[6].status ||
-$scope.cellList[1].status===$scope.cellList[4].status && $scope.cellList[1].status==$scope.cellList[7].status ||
-$scope.cellList[2].status===$scope.cellList[5].status && $scope.cellList[2].status==$scope.cellList[8].status ||
+$scope.cellList[0].name==$scope.cellList[3].name && $scope.cellList[0].name==$scope.cellList[6].name ||
+$scope.cellList[1].name==$scope.cellList[4].name && $scope.cellList[1].name==$scope.cellList[7].name ||
+$scope.cellList[2].name==$scope.cellList[5].name && $scope.cellList[2].name==$scope.cellList[8].name ||
 
 
 //diagonal//
-$scope.cellList[0].status===$scope.cellList[4].status && $scope.cellList[0].status==$scope.cellList[8].status || 
-$scope.cellList[2].status===$scope.cellList[4].status && $scope.cellList[2].status==$scope.cellList[6].status){
-  console.log("'$scope.cellList.status' + 'wins!'");
+$scope.cellList[0].name==$scope.cellList[4].name && $scope.cellList[0].name==$scope.cellList[8].name || 
+$scope.cellList[2].name==$scope.cellList[4].name && $scope.cellList[2].name==$scope.cellList[6].name){
+  alert("'$scope.cellList.status + 'wins!'");
 
 }
 
