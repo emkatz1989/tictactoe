@@ -8,6 +8,7 @@
 </head>
 <body ng-controller="myController">
 	<h1>Tic Tac Toe</h1>
+		<!-- <div my-directive="" x-rating- value="2*10"></div> -->
 		CLICK COUNTER: {{moveCounter}}
 			<div class="box">
 					<div ng-repeat="cell in cellList">
@@ -19,15 +20,7 @@
 
 			</div>
 
-					<!-- id="c0"></div>
-					<div class="cell" id="c1"></div>
-					<div class="cell" id="c2"></div>	
-					<div class="cell" id="c3"></div>
-					<div class="cell" id="c4"></div>
-					<div class="cell" id="c5"></div>
-					<div class="cell" id="c6"></div>
-					<div class="cell" id="c7"></div>
-					<div class="cell" id="c8"></div> -->
+		  <button type="reset" value="Reset" ng-click="reload()">Play Again!</button>		
 			
 
 

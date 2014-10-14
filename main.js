@@ -1,7 +1,31 @@
 var appTicTac=angular.module('appTicTac',[]);
 
+ //app.directive('myDirective', function () {
+//  return {
+//     template: '<ul class="rating">' +
+//                   '<li x-ng-repeat="star in stars" class="filled">' +
+//                       '\u2605' +
+//                   '</li>' +
+//                 '</ul>',
+//     restrict: 'A',
+       // scope: {
+       //  ratingValue: "="
+       // },
+//     link: function (scope, elem, attrs) {
+//       console.log("Directive", scope, elem, attrs);
+//       scope.stars = [];
+//       for(var x = 0; x < parseInt(scope.ratingValue); x++)
+//       {
+//         scope.stars.push({});
+//       }
+//     }
+//   }
+// }); 
+
 appTicTac.controller('myController', function($scope){
 	console.log("here");
+
+  
 
 	$scope.cellList=[
 	{name: "c0", status: "true"},
@@ -17,6 +41,7 @@ appTicTac.controller('myController', function($scope){
 
 
  $scope.moveCounter = 0;
+
   
  $scope.playerPicks = function(cell) {
 
@@ -60,7 +85,7 @@ $scope.cellList[2].name==$scope.cellList[5].name && $scope.cellList[2].name==$sc
 $scope.cellList[0].name==$scope.cellList[4].name && $scope.cellList[0].name==$scope.cellList[8].name || 
 $scope.cellList[2].name==$scope.cellList[4].name && $scope.cellList[2].name==$scope.cellList[6].name){
   alert("'$scope.cellList.status + 'wins!'");
-
+//document..reset();
 }
 
 else{
@@ -69,11 +94,20 @@ else{
 
     };
 
-    console.log("Cell was: " + cell.name);
-   
+  console.log("Cell was: " + cell.name);
+  
+  $scope.reload=function(){
+  y=confirm("Play Again?");
+  if(y=true){
+    alert("Here we go!")
+  location.reload(true);
+}
+} 
     	
 }
 });
+
+
    
 
 
