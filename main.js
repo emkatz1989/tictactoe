@@ -1,31 +1,10 @@
-var appTicTac=angular.module('appTicTac',[]);
+var appTicTac=angular.module('appTicTac',["firebase"]);
 
- //app.directive('myDirective', function () {
-//  return {
-//     template: '<ul class="rating">' +
-//                   '<li x-ng-repeat="star in stars" class="filled">' +
-//                       '\u2605' +
-//                   '</li>' +
-//                 '</ul>',
-//     restrict: 'A',
-       // scope: {
-       //  ratingValue: "="
-       // },
-//     link: function (scope, elem, attrs) {
-//       console.log("Directive", scope, elem, attrs);
-//       scope.stars = [];
-//       for(var x = 0; x < parseInt(scope.ratingValue); x++)
-//       {
-//         scope.stars.push({});
-//       }
-//     }
-//   }
-// }); 
+appTicTac.controller('myController', function ($scope, $firebase){
 
-appTicTac.controller('myController', function($scope){
-	console.log("here");
+$scope.remoteGameContainer= $firebase(new Firebase("https://ekatzttt.firebaseio.com/databasegamecontainer"));
 
-  
+ //gameboard with cell properties "name" for assigning player and "status" for changing box click status // 
 
 	$scope.cellList=[
 	{name: "c0", status: "true"},
@@ -40,65 +19,85 @@ appTicTac.controller('myController', function($scope){
 	];
 
 
- $scope.moveCounter = 0;
 
-  
+//keeps track of player clicks//
+ 
+$scope.moveCounter = 0;
+// $scope.wins=[{name:"player1", wins:0},{name:"player2", wins:0};
+
+//Special Sauce Here: anything with $scope in code replaced with $scope.gameContainer
+$scope.gameContainer={
+  cellListArray: $scope.cellList,
+  moveCount: $scope.moveCounter
+};
+
+//Angular Stuff Here
+
+$scope.remoteGameContainer.$bind($scope, "gameContainer");
+
+$scope.$watch('gameContainer', function(){
+  console.log('gameContainer changed!');
+});
+
+//function for choosing a valid cell and winning//
  $scope.playerPicks = function(cell) {
 
  if(cell.status=="true"){
 
-	cell.status="false";
+	cell.status="false"; //cell becomes unclickable when turned false//
 
-    $scope.moveCounter=$scope.moveCounter + 1;
+    $scope.gameContainer.moveCount++; //moveCounter counts only true cells turning false
+    
 
-    if (($scope.moveCounter % 2) == 1) {
-      cell.name = "X" ; 
+    if (($scope.gameContainer.moveCount % 2) == 1) { //odd clicks determine Player 1//
+      cell.name = "Player 1" ; 
       console.log(cell.name);
-  	} 
+  	}                            //even clicks determine Player 2//
     else {
-      cell.name = "O" ;
+      cell.name = "Player 2" ;  
       console.log(cell.name)
 
     };
-  // 	if($scope.cellList[0..8].status=="false"){
-  // 	console.log("It's a tie!");
 
-  // 	else{
-  // 		return;
-  // }
-
-  // }
 
   if(
-//horizontal//
-$scope.cellList[0].name==$scope.cellList[1].name && $scope.cellList[0].name==$scope.cellList[2].name ||
-$scope.cellList[3].name==$scope.cellList[4].name && $scope.cellList[3].name==$scope.cellList[5].name ||
-$scope.cellList[6].name==$scope.cellList[7].name && $scope.cellList[6].name==$scope.cellList[8].name||
+//horizontal win//
+$scope.gameContainer.cellListArray[0].name==$scope.gameContainer.cellListArray[1].name && $scope.gameContainer.cellListArray[0].name==$scope.gameContainer.cellListArray[2].name ||
+$scope.gameContainer.cellListArray[3].name==$scope.gameContainer.cellListArray[4].name && $scope.gameContainer.cellListArray[3].name==$scope.gameContainer.cellListArray[5].name ||
+$scope.gameContainer.cellListArray[6].name==$scope.gameContainer.cellListArray[7].name && $scope.gameContainer.cellListArray[6].name==$scope.gameContainer.cellListArray[8].name||
 
-//vertical//
-$scope.cellList[0].name==$scope.cellList[3].name && $scope.cellList[0].name==$scope.cellList[6].name ||
-$scope.cellList[1].name==$scope.cellList[4].name && $scope.cellList[1].name==$scope.cellList[7].name ||
-$scope.cellList[2].name==$scope.cellList[5].name && $scope.cellList[2].name==$scope.cellList[8].name ||
+//vertical win//
+$scope.gameContainer.cellListArray[0].name==$scope.gameContainer.cellListArray[3].name && $scope.gameContainer.cellListArray[0].name==$scope.gameContainer.cellListArray[6].name ||
+$scope.gameContainer.cellListArray[1].name==$scope.gameContainer.cellListArray[4].name && $scope.gameContainer.cellListArray[1].name==$scope.gameContainer.cellListArray[7].name ||
+$scope.gameContainer.cellListArray[2].name==$scope.gameContainer.cellListArray[5].name && $scope.gameContainer.cellListArray[2].name==$scope.gameContainer.cellListArray[8].name ||
 
 
-//diagonal//
-$scope.cellList[0].name==$scope.cellList[4].name && $scope.cellList[0].name==$scope.cellList[8].name || 
-$scope.cellList[2].name==$scope.cellList[4].name && $scope.cellList[2].name==$scope.cellList[6].name){
-  alert("'$scope.cellList.status + 'wins!'");
-//document..reset();
+//diagonal win//
+$scope.gameContainer.cellListArray[0].name==$scope.gameContainer.cellListArray[4].name && $scope.gameContainer.cellListArray[0].name==$scope.gameContainer.cellListArray[8].name || 
+$scope.gameContainer.cellListArray[2].name==$scope.gameContainer.cellListArray[4].name && $scope.gameContainer.cellListArray[2].name==$scope.gameContainer.cellListArray[6].name){
+  $scope.player1score=0; //player 1 scorekeeper//
+  $scope.player2score=0; //player 2 scorekeeper//
+  $scope.notification=cell.name + ' wins!';
+  // moveCounter++;
+  cell.name=="Player 1" ? $scope.player1score++ : ""; //score counter interates
+  cell.name=="Player 2" ? $scope.player2score++ : "";
+  if($scope.gameContainer.moveCount==9){ //it's a tie once moveCounter reaches 9
+  alert("It's a tie!");
+  };
+
 }
-
 else{
-	return;
+	return; //loops throught the function until it determines a winner//
 }
 
     };
 
   console.log("Cell was: " + cell.name);
   
+  //reset button reloads the game//
   $scope.reload=function(){
-  y=confirm("Play Again?");
-  if(y=true){
+  X=confirm("Play Again?");
+  if(X=true){
     alert("Here we go!")
   location.reload(true);
 }

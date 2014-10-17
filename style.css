@@ -1,32 +1,36 @@
 
 body{
-	background-image: url("computer-screen.png")
+	background-image: url(winking-girl.gif);
 }
 
 h1{
-	color: white;
-	font-family: Tahoma;
-	font-style:bold;
+	/*color: pink;*/
+	/*font-family: Tahoma;*/
+	/*font-style: bold;*/
 	text-align: center;
-	font-size: 40px;
-
-}
-
-p{
-	text-align: center;
+	font-size: 50px;
+	background-color: black;
+	margin-left: 400px;
+	margin-right: 400px;
+	margin-top: 0px;
 	color: white;
-	font-style: Impact;
-	font-size: 35px;
+	opacity: 0.9;
+	padding:40px;
+	border-radius: 10px;
+	fill: url(#wall4);
+
 }
 
 .box{
 	margin: auto;
 	width: 468px;
 	height: 468px;
-	padding: 80px;
+	padding-bottom: 20px;
 	border-radius: 10px;
-	border-style: solid;
-	border-color: blue;
+	/*border-style: solid;
+	border-color: blue;*/
+	/*background-image: url(scroll.jpg);*/
+	opacity: 0.9;
 }
 
 .cell {
@@ -38,9 +42,21 @@ p{
 	margin: 0px;
 	padding: 0px;
 	border-radius: 10px;
-	background-color: green;
+	background-color: black;
+	/*-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;*/
 	
 
+}
+
+p{
+	text-align: center;
+	color: red;
+	/*font-style: Impact;*/
+	/*fill: url(#wall4);*/
+	font-size: 20px;
+	display: inline-block;
 }
 
 .xclass{
@@ -51,4 +67,42 @@ p{
 .oclass{
 	background-image: url("van-dyke.jpg");
 	/*background-color: blue;*/
+}
+
+.Players{
+	display: inline;
+	text-align: center;
+	float: center;
+}
+
+#player1{
+	display: inline;
+	text-align: center;
+
+
+}
+#player2{
+	display: inline;
+	text-align: center;
+}
+
+#notification{
+	text-align: center;
+	position: relative;
+	display: inline;
+	font-size: 30px;
+	color: black;
+	font-family: Helvetica;
+	float: center;
+	padding: 10px;
+}
+
+button{
+	float: center;
+	display: center;
+	padding-top: 10px;
+	color: white;
+	background-color: green;
+	text-align: center;
+	display: inline;
 }

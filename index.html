@@ -1,28 +1,48 @@
 <!Doctype html>
 <html ng-app="appTicTac" >
 <head>
-	<link type="text/css" rel="stylesheet"
-	href="style.css"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-	<script src="main.js"></script>
+	  <!-- Normalize CSS -->
+    <link rel="stylesheet" src="https://normalize-css.googlecode.com/svn/trunk/normalize.min.css">
+    <!-- App CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+    <!-- App javascript -->
+    <script src="main.js"></script>
+	
 </head>
-<body ng-controller="myController">
-	<h1>Tic Tac Toe</h1>
-		<!-- <div my-directive="" x-rating- value="2*10"></div> -->
-		CLICK COUNTER: {{moveCounter}}
+<body ng-controller="myController" ng-model="gameContainer">
+	<h1>Dic Tac Toe</h1>
+		<!-- CLICK COUNTER: {{moveCounter}} -->
+			
 			<div class="box">
-					<div ng-repeat="cell in cellList">
-						<div class="cell" ng-click="playerPicks(cell)" ng-class="{xclass: cell.name=='X', oclass: cell.name=='O'}">
-
-					<!-- 	Cell Contents: {{currentCell.status}} -->
+					<div ng-bind="notification" id="notification">
+					</div>
+					<div ng-repeat="cell in gameContainer.cellListArray">
+						<div class="cell" ng-click="playerPicks(cell)" ng-class="{xclass: cell.name=='Player 1', oclass: cell.name=='Player 2'}">	 
 						</div>
 					</div>
-
-			</div>
-
-		  <button type="reset" value="Reset" ng-click="reload()">Play Again!</button>		
-			
-
-
+					
+					
+					<div class="Players">
+						<div id="player1" ng-bind="player1score">
+							<p>Player 1:</p>  {{player1score}}
+						</div>
+						<div id="player2" ng-bind="player2score">
+							<p>Player 2:</p> {{player2score}}
+						</div>
+					</div>
+					<div id="button">
+						<button id="Reset" type="reset" value="Reset" ng-click="reload()">Play Again!</button>
+					</div>
+				</div>
+					<!-- 	Cell Contents: {{currentCell.status}} -->
+					<!-- <p ng-show>?</p> -->
+						
+		 		
 </body>
 </html>
