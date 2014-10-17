@@ -1,52 +1,74 @@
 
 body{
 	background-image: url(winking-girl.gif);
+	background-repeat: repeat-y;
+	background-size: cover;
+	background-attachment: fixed;
+	background-margin: 300px;
 }
 
 h1{
 	/*color: pink;*/
 	/*font-family: Tahoma;*/
 	/*font-style: bold;*/
+	float: left;
 	text-align: center;
-	font-size: 50px;
+	font-size: 70px;
 	background-color: black;
-	margin-left: 400px;
-	margin-right: 400px;
+	/*margin-left: 350px;
+	margin-right: 350px;*/
 	margin-top: 0px;
-	color: white;
-	opacity: 0.9;
-	padding:40px;
+	margin-right: 500px;
+	color: red;
+	opacity: 0.8;
+	padding: 40px;
 	border-radius: 10px;
-	fill: url(#wall4);
+	font-family: Impact;
+	
 
+}
+
+h2{
+	color: white;
+	display: inline;
 }
 
 .box{
 	margin: auto;
 	width: 468px;
 	height: 468px;
-	padding-bottom: 20px;
+	margin-left: 50px;
+	margin-bottom: 40px;
 	border-radius: 10px;
 	/*border-style: solid;
 	border-color: blue;*/
 	/*background-image: url(scroll.jpg);*/
-	opacity: 0.9;
+	opacity: 0.6;
 }
 
 .cell {
 	width: 150px; 
 	height: 150px;
-	border: 2px solid white;
+	border: 2px solid red;
 	float: left;
 	display: inline-block;
 	margin: 0px;
 	padding: 0px;
 	border-radius: 10px;
-	background-color: black;
+	background-image: url(question.jpg);
 	/*-moz-box-shadow: 10px 10px 5px #888;
 	-webkit-box-shadow: 10px 10px 5px #888;
 	box-shadow: 10px 10px 5px #888;*/
 	
+
+}
+
+p.cell{
+
+}
+
+.cell:hover{
+	background-color: red;
 
 }
 
@@ -90,19 +112,25 @@ p{
 	text-align: center;
 	position: relative;
 	display: inline;
-	font-size: 30px;
-	color: black;
+	font-size: 50px;
+	color: red;
+	background-color: black;
 	font-family: Helvetica;
 	float: center;
-	padding: 10px;
+	/*padding: 10px;*/
+	/*background-color: black;*/
 }
 
 button{
 	float: center;
 	display: center;
 	padding-top: 10px;
-	color: white;
-	background-color: green;
+	color: red;
+	background-color: black;
 	text-align: center;
 	display: inline;
+}
+
+button.hover{
+	background-color: white;
 }

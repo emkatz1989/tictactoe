@@ -16,14 +16,15 @@
 	
 </head>
 <body ng-controller="myController" ng-model="gameContainer">
-	<h1>Dic Tac Toe</h1>
+	<h1>XX Dic Tac Toe XX</h1>
+		<h2 ng-bind>Dic 1: {{player1score}}  Dic 2: {{player2score}}</h2>
 		<!-- CLICK COUNTER: {{moveCounter}} -->
 			
 			<div class="box">
 					<div ng-bind="notification" id="notification">
 					</div>
 					<div ng-repeat="cell in gameContainer.cellListArray">
-						<div class="cell" ng-click="playerPicks(cell)" ng-class="{xclass: cell.name=='Player 1', oclass: cell.name=='Player 2'}">	 
+						<div class="cell" ng-click="playerPicks(cell)" ng-class="{xclass: cell.name=='Dic 1', oclass: cell.name=='Dic 2'}">	 
 						</div>
 					</div>
 					

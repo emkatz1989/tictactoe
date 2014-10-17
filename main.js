@@ -25,7 +25,7 @@ $scope.remoteGameContainer= $firebase(new Firebase("https://ekatzttt.firebaseio.
 $scope.moveCounter = 0;
 // $scope.wins=[{name:"player1", wins:0},{name:"player2", wins:0};
 
-//Special Sauce Here: anything with $scope in code replaced with $scope.gameContainer
+//Special Sauce Here: anything on list with $scope in code replaced with $scope.gameContainer
 $scope.gameContainer={
   cellListArray: $scope.cellList,
   moveCount: $scope.moveCounter
@@ -44,17 +44,17 @@ $scope.$watch('gameContainer', function(){
 
  if(cell.status=="true"){
 
-	cell.status="false"; //cell becomes unclickable when turned false//
+  cell.status="false"; //cell becomes unclickable when turned false//
 
-    $scope.gameContainer.moveCount++; //moveCounter counts only true cells turning false
+  $scope.gameContainer.moveCount++; //moveCounter counts only true cells turning false
     
 
-    if (($scope.gameContainer.moveCount % 2) == 1) { //odd clicks determine Player 1//
-      cell.name = "Player 1" ; 
+  if (($scope.gameContainer.moveCount % 2) == 1) { //odd clicks determine Player 1//
+      cell.name = "Dic 1" ; 
       console.log(cell.name);
   	}                            //even clicks determine Player 2//
     else {
-      cell.name = "Player 2" ;  
+      cell.name = "Dic 2" ;  
       console.log(cell.name)
 
     };
@@ -62,19 +62,19 @@ $scope.$watch('gameContainer', function(){
 
   if(
 //horizontal win//
-$scope.gameContainer.cellListArray[0].name==$scope.gameContainer.cellListArray[1].name && $scope.gameContainer.cellListArray[0].name==$scope.gameContainer.cellListArray[2].name ||
-$scope.gameContainer.cellListArray[3].name==$scope.gameContainer.cellListArray[4].name && $scope.gameContainer.cellListArray[3].name==$scope.gameContainer.cellListArray[5].name ||
-$scope.gameContainer.cellListArray[6].name==$scope.gameContainer.cellListArray[7].name && $scope.gameContainer.cellListArray[6].name==$scope.gameContainer.cellListArray[8].name||
+$scope.gameContainer.cellListArray["0"].name==$scope.gameContainer.cellListArray["1"].name && $scope.gameContainer.cellListArray["0"].name==$scope.gameContainer.cellListArray["2"].name ||
+$scope.gameContainer.cellListArray["3"].name==$scope.gameContainer.cellListArray["4"].name && $scope.gameContainer.cellListArray["3"].name==$scope.gameContainer.cellListArray["5"].name ||
+$scope.gameContainer.cellListArray["6"].name==$scope.gameContainer.cellListArray["7"].name && $scope.gameContainer.cellListArray["6"].name==$scope.gameContainer.cellListArray["8"].name||
 
 //vertical win//
-$scope.gameContainer.cellListArray[0].name==$scope.gameContainer.cellListArray[3].name && $scope.gameContainer.cellListArray[0].name==$scope.gameContainer.cellListArray[6].name ||
-$scope.gameContainer.cellListArray[1].name==$scope.gameContainer.cellListArray[4].name && $scope.gameContainer.cellListArray[1].name==$scope.gameContainer.cellListArray[7].name ||
-$scope.gameContainer.cellListArray[2].name==$scope.gameContainer.cellListArray[5].name && $scope.gameContainer.cellListArray[2].name==$scope.gameContainer.cellListArray[8].name ||
+$scope.gameContainer.cellListArray["0"].name==$scope.gameContainer.cellListArray["3"].name && $scope.gameContainer.cellListArray["0"].name==$scope.gameContainer.cellListArray["6"].name ||
+$scope.gameContainer.cellListArray["1"].name==$scope.gameContainer.cellListArray["4"].name && $scope.gameContainer.cellListArray["1"].name==$scope.gameContainer.cellListArray["7"].name ||
+$scope.gameContainer.cellListArray["2"].name==$scope.gameContainer.cellListArray["5"].name && $scope.gameContainer.cellListArray["2"].name==$scope.gameContainer.cellListArray["8"].name ||
 
 
 //diagonal win//
-$scope.gameContainer.cellListArray[0].name==$scope.gameContainer.cellListArray[4].name && $scope.gameContainer.cellListArray[0].name==$scope.gameContainer.cellListArray[8].name || 
-$scope.gameContainer.cellListArray[2].name==$scope.gameContainer.cellListArray[4].name && $scope.gameContainer.cellListArray[2].name==$scope.gameContainer.cellListArray[6].name){
+$scope.gameContainer.cellListArray["0"].name==$scope.gameContainer.cellListArray["4"].name && $scope.gameContainer.cellListArray["0"].name==$scope.gameContainer.cellListArray["8"].name || 
+$scope.gameContainer.cellListArray["2"].name==$scope.gameContainer.cellListArray["4"].name && $scope.gameContainer.cellListArray["2"].name==$scope.gameContainer.cellListArray["6"].name){
   $scope.player1score=0; //player 1 scorekeeper//
   $scope.player2score=0; //player 2 scorekeeper//
   $scope.notification=cell.name + ' wins!';
