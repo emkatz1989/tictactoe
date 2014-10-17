@@ -10,16 +10,18 @@
     <!-- Firebase -->
     <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
     <!-- AngularFire -->
-    <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
     <!-- App javascript -->
     <script src="main.js"></script>
 	
 </head>
 <body ng-controller="myController" ng-model="gameContainer">
-	<h1>XX Dic Tac Toe XX</h1>
+	<h1> Dic Tac Toe </h1>
 		<h2 ng-bind>Dic 1: {{player1score}}  Dic 2: {{player2score}}</h2>
 		<!-- CLICK COUNTER: {{moveCounter}} -->
-			
+			<div id="button">
+						<button id="Reset" type="reset" value="Reset" ng-click="resetButton()">New Game</button>
+					</div>
 			<div class="box">
 					<div ng-bind="notification" id="notification">
 					</div>
@@ -37,10 +39,9 @@
 							<p>Player 2:</p> {{player2score}}
 						</div>
 					</div>
-					<div id="button">
-						<button id="Reset" type="reset" value="Reset" ng-click="reload()">Play Again!</button>
-					</div>
+					
 				</div>
+				
 					<!-- 	Cell Contents: {{currentCell.status}} -->
 					<!-- <p ng-show>?</p> -->
 						
