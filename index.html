@@ -16,25 +16,27 @@
 	
 </head>
 <body ng-controller="myController" ng-model="gameContainer">
-<!-- <div id="headerwrapper"> -->
 	<h1> Dic Tac Toe </h1>
-	<!-- 	<div class="scoreboard">
-			<div ng-bind="player2score">Dic 2: {{player2score}}</h2>  
-			<h2>Dic 1: {{player1score}}</h2>
-		</div>
-</div> -->
-		<!-- CLICK COUNTER: {{moveCounter}} -->
-			<div class="clearFix"></div>
+		<div class="clearFix"></div>
+			<!-- 'New Game' button to refresh gameboard -->
 			<button id = "Reset" type="reset" value="Reset" ng-click="resetButton()">New Game
 			</button>
+			<!-- Box containing game cells -->
 			<div class="box">
 					<div ng-bind="notification" class="notification">
 					</div>
+					<div class="clearFix"></div>
 					<div ng-repeat="cell in gameContainer.cellListArray">
 						<div class="cell" ng-click="playerPicks(cell)" ng-class="{xclass: cell.name=='Dic 1', oclass: cell.name=='Dic 2'}">	 
 						</div>
 					</div>
-					<!-- <div class="Winner 1" id="notification" ng-show="notification">Dic 1 wins!</div>
+			</div>
+						
+		 		
+</body>
+</html>
+
+<!-- <div class="Winner 1" id="notification" ng-show="notification">Dic 1 wins!</div>
 					<div class="Winner 2" id="notification" ng-show="notification">Dic 2 wins!</div> -->
 
 					<!-- <div class="Players">
@@ -43,8 +45,3 @@
 						</div>
 						<div id="player2" ng-bind="player2score">
 							<p>Player 2:</p> {{player2score}} -->
-			</div>
-						
-		 		
-</body>
-</html>

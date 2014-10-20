@@ -8,11 +8,7 @@ body{
 	
 }
 
-#headerwrapper{
-	display: inline;
-	padding: 30px;
-	margin-right: 10px;
-}
+
 
 h1{
 	float: left;
@@ -21,7 +17,7 @@ h1{
 	background-color: black;
 	margin-left: 40px;
 	margin-right: 350px;
-	margin-bottom: 0px;
+	/*margin-bottom: 0px;*/
 	color: red;
 	opacity: 0.7;
 	padding: 40px;
@@ -29,20 +25,9 @@ h1{
 	font-family: Impact;
 }
 
-.scoreboard{
-	margin-right: 10px;
 
-}
 
-h2{
-	color: red;
-	background-color: black;
-	display: inline-block;
-	font-style: bold;
-	margin-right: 100px;
-	float: right;
 
-}
 
 .box{
 	margin: auto;
@@ -70,15 +55,6 @@ h2{
 	border-color: white;
 }
 
-p{
-	text-align: center;
-	color: red;
-	/*font-style: Impact;*/
-	/*fill: url(#wall4);*/
-	font-size: 20px;
-	display: inline-block;
-}
-
 .xclass{
 	background-image: url("cheney-photo.jpg");
 }
@@ -86,25 +62,6 @@ p{
 .oclass{
 	background-image: url("van-dyke.jpg");
 }
-
-
-/*
-.Players{
-	display: inline;
-	text-align: center;
-	float: center;
-}
-
-#player1{
-	display: inline;
-	text-align: center;
-
-
-}
-#player2{
-	display: inline;
-	text-align: center;
-}*/
 
 .notification{
 	text-align: center;
@@ -143,5 +100,56 @@ p{
 #Reset:hover{
 	background-color: white;
 }
+
+
+
+
+
+
+
+
+
+
+/*.scoreboard{
+	margin-right: 10px;*/
+
+}
+
+
+
+/*#headerwrapper{
+	display: inline;
+	padding: 30px;
+	margin-right: 10px;
+}*/
+
+
+/*h2{
+	color: red;
+	background-color: black;
+	display: inline-block;
+	font-style: bold;
+	margin-right: 100px;
+	float: right;
+
+}*/
+
+/*
+.Players{
+	display: inline;
+	text-align: center;
+	float: center;
+}
+
+#player1{
+	display: inline;
+	text-align: center;
+
+
+}
+#player2{
+	display: inline;
+	text-align: center;
+}*/
 
 

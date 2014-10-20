@@ -77,7 +77,8 @@ appTicTac.controller('myController', function ($scope, $firebase){
         $scope.gameContainer.cellListArray["0"].name == $scope.gameContainer.cellListArray["4"].name && $scope.gameContainer.cellListArray["0"].name == $scope.gameContainer.cellListArray["8"].name || 
         $scope.gameContainer.cellListArray["2"].name == $scope.gameContainer.cellListArray["4"].name && $scope.gameContainer.cellListArray["2"].name == $scope.gameContainer.cellListArray["6"].name){
           $scope.gameEnd = true;
-          
+        
+        //flashes winner  
           $scope.notification = cell.name + ' wins!';
           console.log("hi");
 
@@ -85,6 +86,8 @@ appTicTac.controller('myController', function ($scope, $firebase){
           // cell.name == "Player 1" ? $scope.gameContainer.player1score++ : ""; //score counter interates
           // cell.name == "Player 2" ? $scope.gameContainer.player2score++ : "";  
       } else {
+        
+        //checks for a tie-game
         $scope.checkTie(); 
         console.log("hi");
       }
@@ -92,7 +95,7 @@ appTicTac.controller('myController', function ($scope, $firebase){
     console.log("Cell was: " + cell.name);
   };
 
-
+  //variable declared for checking a tie-game
   $scope.checkTie=function(){
       console.log("checktie called outside if") ;
     if($scope.gameContainer.moveCount == 9 && $scope.gameEnd != true){ //it's a tie once moveCounter reaches 9
