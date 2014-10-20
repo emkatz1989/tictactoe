@@ -48,32 +48,32 @@ appTicTac.controller('myController', function ($scope, $firebase){
 
     if(cell.status == "true"){
 
-      cell.status = "false" ; //cell becomes unclickable when turned false//
+      cell.status = "false" ; //cell becomes unclickable when turned false
 
       $scope.gameContainer.moveCount++; //moveCounter counts only true cells turning false
 
-      if (($scope.gameContainer.moveCount % 2) == 1) { //odd clicks determine Player 1//
+      if (($scope.gameContainer.moveCount % 2) == 1) { //odd clicks determine Player 1
         cell.name = "Dic 1" ; 
         console.log(cell.name) ;
-    	}                            //even clicks determine Player 2//
+    	}                            //even clicks determine Player 2
       else {
         cell.name = "Dic 2" ;  
         console.log(cell.name) ;
       }
 
       if(
-        //horizontal win//
+        //horizontal win
         $scope.gameContainer.cellListArray["0"].name == $scope.gameContainer.cellListArray["1"].name && $scope.gameContainer.cellListArray["0"].name == $scope.gameContainer.cellListArray["2"].name ||
         $scope.gameContainer.cellListArray["3"].name == $scope.gameContainer.cellListArray["4"].name && $scope.gameContainer.cellListArray["3"].name == $scope.gameContainer.cellListArray["5"].name ||
         $scope.gameContainer.cellListArray["6"].name == $scope.gameContainer.cellListArray["7"].name && $scope.gameContainer.cellListArray["6"].name == $scope.gameContainer.cellListArray["8"].name||
 
-        //vertical win//
+        //vertical win
         $scope.gameContainer.cellListArray["0"].name == $scope.gameContainer.cellListArray["3"].name && $scope.gameContainer.cellListArray["0"].name == $scope.gameContainer.cellListArray["6"].name ||
         $scope.gameContainer.cellListArray["1"].name == $scope.gameContainer.cellListArray["4"].name && $scope.gameContainer.cellListArray["1"].name == $scope.gameContainer.cellListArray["7"].name ||
         $scope.gameContainer.cellListArray["2"].name == $scope.gameContainer.cellListArray["5"].name && $scope.gameContainer.cellListArray["2"].name == $scope.gameContainer.cellListArray["8"].name ||
 
 
-        //diagonal win//
+        //diagonal win
         $scope.gameContainer.cellListArray["0"].name == $scope.gameContainer.cellListArray["4"].name && $scope.gameContainer.cellListArray["0"].name == $scope.gameContainer.cellListArray["8"].name || 
         $scope.gameContainer.cellListArray["2"].name == $scope.gameContainer.cellListArray["4"].name && $scope.gameContainer.cellListArray["2"].name == $scope.gameContainer.cellListArray["6"].name){
           $scope.gameEnd = true;
@@ -102,7 +102,7 @@ appTicTac.controller('myController', function ($scope, $firebase){
   }
 
 
-  //reset button reloads the game//
+  //reset button refreshes the game
   $scope.resetButton = function(){
    for (x=0 ; x<=8 ;x++) {
      cellName = "c" + x.toString() ;
