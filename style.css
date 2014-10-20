@@ -8,45 +8,50 @@ body{
 	
 }
 
+#headerwrapper{
+	display: inline;
+	padding: 30px;
+	margin-right: 10px;
+}
+
 h1{
-	/*color: pink;*/
-	/*font-family: Tahoma;*/
-	/*font-style: bold;*/
 	float: left;
 	text-align: center;
 	font-size: 70px;
 	background-color: black;
-	margin-left: 80px;
+	margin-left: 40px;
 	margin-right: 350px;
-	margin-top: 0px;
-	margin-right: 500px;
+	margin-bottom: 0px;
 	color: red;
 	opacity: 0.7;
 	padding: 40px;
 	border-radius: 10px;
 	font-family: Impact;
-	
-	
+}
+
+.scoreboard{
+	margin-right: 10px;
 
 }
 
 h2{
-	color: white;
-	display: inline;
+	color: red;
+	background-color: black;
+	display: inline-block;
+	font-style: bold;
+	margin-right: 100px;
+	float: right;
+
 }
 
 .box{
 	margin: auto;
 	width: 468px;
 	height: 468px;
-	margin-left: 50px;
+	margin-left: 20px;
 	margin-bottom: 40px;
 	border-radius: 10px;
-	/*border-style: solid;
-	border-color: blue;*/
-	/*background-image: url(scroll.jpg);*/
 	opacity: 0.6;
-	
 }
 
 .cell {
@@ -59,21 +64,10 @@ h2{
 	padding: 0px;
 	border-radius: 10px;
 	background-image: url(question.jpg);
-	/*-moz-box-shadow: 10px 10px 5px #888;
-	-webkit-box-shadow: 10px 10px 5px #888;
-	box-shadow: 10px 10px 5px #888;*/
-	
-	
-
-}
-
-p.cell{
-
 }
 
 .cell:hover{
-	background-color: red;
-
+	border-color: white;
 }
 
 p{
@@ -87,14 +81,14 @@ p{
 
 .xclass{
 	background-image: url("cheney-photo.jpg");
-/*	background-color: red;*/
 }
 
 .oclass{
 	background-image: url("van-dyke.jpg");
-	/*background-color: blue;*/
 }
 
+
+/*
 .Players{
 	display: inline;
 	text-align: center;
@@ -110,36 +104,46 @@ p{
 #player2{
 	display: inline;
 	text-align: center;
-}
+}*/
 
-#notification{
+.notification{
 	text-align: center;
 	position: relative;
 	display: inline;
-	font-size: 50px;
+	font-size: 35px;
 	color: red;
 	background-color: black;
 	font-family: Helvetica;
 	float: center;
 	border-radius: 10px;
-	margin-left: 70px;
+	margin-left: 135px;
+	margin-bottom: 10px;
+}
+
+.clearFix{
+	clear: both;
+	padding: 10px;
 }
 
 #Reset{
-	/*float: center;*/
-/*	display: center;*/
+	float: center;
+	display: center;
 	/*position: relative;*/
 	padding-top: 10px;
 	color: red;
 	background-color: black;
 	margin-bottom: 10px;
-	/*text-align: center;*/
+	margin-top: 10px;
+	text-align: center;
+	padding-top: 10px;
+	margin-left: 180px;
 	/*display: inline;*/
 	border-radius: 10px;
-	left-margin: 1000px;
-	
+	font-size: 20px;
 }
 
-/*button.hover{
+#Reset:hover{
 	background-color: white;
-}*/
+}
+
+
